@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'uploadFile_static/uploadFileAppStyle.css' %}">
+    <meta charset="UTF-8">
+    <title>Hochladen erfolgreich</title>
+</head>
+<body>
+    <div class="alignCenter">
+        <h2>Hochladen erfolgreich</h2>
+        <p>Die Datei wurde erfolgreich hochgeladen</p>
+        <p>Hochgeladene Datei zum download:
+        <a href="{{ file.file.url }}" download><button class="button">{{ file.file.name }}</button></a>
+        </p>
+
+        <a href="{% url 'upload_file' %}"><button class="button">Zurück</button></a>
+    </div>
+</body>
+</html>

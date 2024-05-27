@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <link rel="stylesheet" href="{{ url_for('.static', filename='uploadFile_static/uploadFileAppStyle.css') }}">
+
+    <meta charset="UTF-8">
+    <title>Löschen erfolgreich</title>
+</head>
+<body>
+    <div class="alignCenter">
+        <h2>Löschen erfolgreich</h2>
+        <p>Die Datei konnte erfolgreich gelöscht werden</p>
+
+        <a href="{{ url_for('uploadFile.delete_file') }}"><button class="button">Zurück</button></a>
+    </div>
+</body>
+</html>

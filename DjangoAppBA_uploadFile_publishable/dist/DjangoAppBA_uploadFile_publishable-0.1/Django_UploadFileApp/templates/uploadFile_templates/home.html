@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'uploadFile_static/uploadFileAppStyle.css' %}">
+    <meta charset="UTF-8">
+    <title>Home</title>
+</head>
+<body>
+    <div class="alignCenter">
+        <h2>Dies ist eine Django App zum Hochladen und Löschen von Dateien</h2>
+        {% if uploaded_files %}
+            <p>Bereits hochgeladene Dateien:</p>
+            <ul style="display: inline-block; text-align: left;">
+
+                    {% for file in uploaded_files %}
+                            <li>{{ file.file.name }}</li>
+                    {% endfor %}
+
+            </ul>
+
+        {% else%}
+            <p>Noch keine Dateien hochgeladen</p>
+
+        {% endif %}
+
+        <br>
+
+        <a href="{% url 'upload_file' %}"><button class="button"> Datei hochladen</button></a>
+        <a href="{% url 'delete_file' %}"><button class="button">Hochgeladene Datei löschen</button></a>
+    </div>
+</body>
+</html>

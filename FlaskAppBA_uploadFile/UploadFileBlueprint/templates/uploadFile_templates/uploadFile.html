@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <link rel="stylesheet" href="{{ url_for('.static', filename='uploadFile_static/uploadFileAppStyle.css') }}">
+
+    <meta charset="UTF-8">
+    <title>Datei hochladen</title>
+</head>
+<body>
+    <div class="alignCenter">
+        <h2>Datei hochladen</h2>
+        <form method="post" enctype="multipart/form-data">
+            {{ form.csrf_token }}
+            <p>
+                Datei:
+                {{ form.file }}
+            </p>
+            <button type="submit" class="button" style="background-color: green">Hochladen</button>
+        </form>
+
+        <br>
+
+        <a href="{{ url_for('uploadFile.home') }}"><button class="button">Zur Hauptseite</button></a>
+    </div>
+</body>
+</html>

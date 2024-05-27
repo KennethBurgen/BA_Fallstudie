@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <link rel="stylesheet" href="{{ url_for('.static', filename='uploadFile_static/uploadFileAppStyle.css') }}">
+
+    <meta charset="UTF-8">
+    <title>Home</title>
+</head>
+<body>
+    <div class="alignCenter">
+        <h2>Dies ist ein Flask Blueprint zum Hochladen und Löschen von Dateien</h2>
+        {% if uploaded_files %}
+            <p>Bereits hochgeladene Dateien:</p>
+            <ul style="display: inline-block; text-align: left;">
+
+                    {% for file in uploaded_files %}
+                            <li>{{ file.filename }}</li>
+                    {% endfor %}
+
+            </ul>
+
+        {% else%}
+            <p>Noch keine Dateien hochgeladen</p>
+
+        {% endif %}
+
+        <br>
+
+        <a href="{{ url_for('uploadFile.upload_file') }}"><button class="button"> Datei hochladen</button></a>
+        <a href="{{ url_for('uploadFile.delete_file') }}"><button class="button">Hochgeladene Datei löschen</button></a>
+    </div>
+</body>
+</html>

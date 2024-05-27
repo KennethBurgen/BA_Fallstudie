@@ -1,0 +1,4 @@
+include LICENSE
+include README.rst
+recursive-include Django_UploadFileApp/static *
+recursive-include Django_UploadFileApp/templates *

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'uploadFile_static/uploadFileAppStyle.css' %}">
+    <meta charset="UTF-8">
+    <title>Datei löschen</title>
+</head>
+<body>
+    <div class="alignCenter">
+        <h2>Datei löschen</h2>
+        <form action="{% url 'delete_file' %}" method="post">
+            {% csrf_token %}
+            <p>Hochgeladene Dateien:
+            <select name="file_id">
+                {% for file in uploaded_files %}
+                    <option value="{{ file.id }}">{{ file.file.name }}</option>
+                {% endfor %}
+            </select>
+            </p>
+            <button type="submit" class="button" style="background-color: red">Löschen</button>
+        </form>
+
+        <br>
+
+        <a href="{% url 'home' %}"><button class="button">Zur Hauptseite</button></a>
+    </div>
+</body>
+</html>

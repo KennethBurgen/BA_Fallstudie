@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <link rel="stylesheet" href="{{ url_for('.static', filename='uploadFile_static/uploadFileAppStyle.css') }}">
+
+    <meta charset="UTF-8">
+    <title>Hochladen erfolgreich</title>
+</head>
+<body>
+    <div class="alignCenter">
+        <h2>Hochladen erfolgreich</h2>
+        <p>Die Datei wurde erfolgreich hochgeladen</p>
+        <p>Hochgeladene Datei zum download:
+        <a href="{{ url_for('uploadFile.download_file', file_id=file.id) }}" download><button class="button">{{ file.filename }}</button></a>
+        </p>
+
+        <a href="{{ url_for('uploadFile.upload_file') }}"><button class="button">Zurück</button></a>
+    </div>
+</body>
+</html>

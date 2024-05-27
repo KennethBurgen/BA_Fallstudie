@@ -1,0 +1,51 @@
+Metadata-Version: 2.1
+Name: DjangoAppBA_uploadFile_publishable
+Version: 0.1
+Summary: Eine Django App für das Hochladen, sowie Löschen von Dateien
+Home-page: https://www.example.com/
+Author: Kenneth Burgen
+Author-email: kennethjlburgen@gmail.com
+License: BSD-3-Clause  # Example license
+Platform: UNKNOWN
+Classifier: Environment :: Web Environment
+Classifier: Framework :: Django
+Classifier: Framework :: Django :: X.Y  # Replace "X.Y" as appropriate
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Topic :: Internet :: WWW/HTTP
+Classifier: Topic :: Internet :: WWW/HTTP :: Dynamic Content
+Requires-Python: >=3.9
+
+============
+UploadFileApp
+============
+
+UploadFileApp ist eine Django App für das Hochladen, sowie Löschen von Dateien.
+
+Einbinden
+-----------
+
+1. "UploadFileApp" muss folgendermaßen zu INSTALLED_APPS in der Settings.py des Projektes hinzugefügt::
+
+    INSTALLED_APPS = [
+        ...,
+        "Django_UploadFileApp",
+    ]
+
+2. Anschließend muss die URLconf von "UploadFileApp" noch in die urls.py des Projektes wie folgt eingebunden werden::
+
+    path('fileUpload/', include('Django_UploadFileApp.urls')),
+
+3. Als nächstes muss der Befehl ``python manage.py migrate`` durchgeführt werden, um die `models` zu erstellen.
+
+4. Nun muss der Entwicklungsserver gestartet werden (z.B. mittels ``python manage.py runserver``).
+
+5. Abschließend kann die ``/fileUpload/`` URL besucht werden.
+

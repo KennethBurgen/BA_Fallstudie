@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'uploadFile_static/uploadFileAppStyle.css' %}">
+    <meta charset="UTF-8">
+    <title>Datei hochladen</title>
+</head>
+<body>
+    <div class="alignCenter">
+        <h2>Datei hochladen</h2>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="button" style="background-color: green">Hochladen</button>
+        </form>
+
+        <br>
+
+        <a href="{% url 'home' %}"><button class="button">Zur Hauptseite</button></a>
+    </div>
+</body>
+</html>
